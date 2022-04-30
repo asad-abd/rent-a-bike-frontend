@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "rent-a-bike",
+    "slug": "rent-a-bike",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "assetBundlePatterns": ["**/*"],
+    "description": "A bike rental app IIT bhilai",
+    "ios": {
+      "supportsTablet": true
+    },
+
+    "android": {
+      "package": "com.iitbhilai.rentabike"
+    },
+    "plugins": ["@react-native-google-signin/google-signin"]
+  }
+}

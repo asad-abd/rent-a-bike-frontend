@@ -1,0 +1,50 @@
+{
+  "name": "rent-a-bike",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-google-signin/google-signin": "^7.2.2",
+    "@react-navigation/bottom-tabs": "^6.2.0",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
+    "axios": "^0.26.1",
+    "expo": "~44.0.2",
+    "expo-barcode-scanner": "~11.2.0",
+    "expo-location": "~14.0.1",
+    "expo-permissions": "^13.1.1",
+    "expo-splash-screen": "~0.14.1",
+    "expo-status-bar": "~1.2.0",
+    "firebase": "7.9.0",
+    "google-auth-library": "^8.0.1",
+    "pod-install": "^0.1.33",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-google-login": "^5.2.2",
+    "react-native": "0.64.3",
+    "react-native-camera": "^4.2.1",
+    "react-native-element-dropdown": "^1.8.4",
+    "react-native-gesture-handler": "^2.3.2",
+    "react-native-get-location": "^2.2.1",
+    "react-native-internet-connection-alert": "^0.1.7",
+    "react-native-login-screen": "^3.0.2",
+    "react-native-reanimated": "^2.4.1",
+    "react-native-safe-area-context": "^4.2.1",
+    "react-native-screens": "^3.13.1",
+    "react-native-table-component": "^1.2.2",
+    "react-native-text-input-interactive": "^0.1.3",
+    "react-native-upi-payment": "^1.0.3",
+    "react-native-vector-icons": "^9.1.0",
+    "react-native-web": "0.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "private": true
+}
