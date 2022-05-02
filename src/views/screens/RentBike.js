@@ -152,7 +152,7 @@ export default function RentBike() {
       axios
         .post("https://rent-a-bikee.herokuapp.com/book-bike", {
           bikeid: qrData,
-          userid: 2,
+          userid: 10,
         })
         .then(function (response) {
           if (response?.err) {
@@ -207,6 +207,16 @@ export default function RentBike() {
     }
   };
 
+  const [isBikeLocked, setIsBikeLocked] = useState(false);
+  console.log({ isBikeLocked });
+
+  const handleBikeLocked = async () => {
+    axios.get(
+      `http://192.168.187.121:5000/${isBikeLocked ? "unlock" : "lock"}/1`
+    );
+    setIsBikeLocked(!isBikeLocked);
+  };
+
   const handleFinishRide = async () => {
     console.log("handleFini shRide");
     let location = await Location.getCurrentPositionAsync({});
@@ -218,7 +228,7 @@ export default function RentBike() {
         .post("https://rent-a-bikee.herokuapp.com/end-trip", {
           lat: location["coords"]["latitude"],
           long: location["coords"]["longitude"],
-          userid: 2,
+          userid: 10,
         })
         .then(function (response) {
           if (response?.err) {
@@ -400,10 +410,9 @@ export default function RentBike() {
                       FINISH RIDE
                     </Text>
                   </Pressable>
-
                   <Pressable
                     // onPress={() => Alert.alert(`You selected ${dropdownValue}`)}
-                    onPress={() => setTripBooked(false)}
+                    onPress={() => handleBikeLocked()}
                     style={({ pressed }) => [
                       {
                         backgroundColor: pressed ? COLORS.grey : COLORS.dark,
@@ -412,7 +421,9 @@ export default function RentBike() {
                       style.btn2,
                     ]}
                   >
-                    <Text style={{ color: "white" }}>LOCK BIKE</Text>
+                    <Text style={{ color: "white" }}>
+                      {isBikeLocked && "UN"}LOCK BIKE
+                    </Text>
                   </Pressable>
                 </View>
               </View>
